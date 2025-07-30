@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Star, Quote } from 'lucide-react';
+import { Star } from 'lucide-react';
 
 const projects = [
   {
@@ -40,27 +40,6 @@ const projects = [
   }
 ];
 
-const testimonials = [
-  {
-    name: 'Carlos Rodríguez',
-    company: 'Metalúrgica del Sur',
-    text: 'Excelente trabajo en nuestra instalación industrial. Francisco es muy profesional y responsable.',
-    rating: 5
-  },
-  {
-    name: 'María González',
-    company: 'Centro Comercial Plaza',
-    text: 'Servicio rápido y eficiente. Resolvió nuestro problema eléctrico en tiempo récord.',
-    rating: 5
-  },
-  {
-    name: 'Roberto Silva',
-    company: 'Constructora Silva',
-    text: 'Trabajo de alta calidad. Recomiendo ampliamente sus servicios eléctricos.',
-    rating: 5
-  }
-];
-
 const Work = () => {
   return (
     <section id="work" className="py-20 bg-gray-50">
@@ -77,7 +56,7 @@ const Work = () => {
             Nuestros <span className="text-blue-600">Trabajos</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Proyectos destacados y testimonios de clientes satisfechos
+            Proyectos destacados y trabajos realizados
           </p>
         </motion.div>
 
@@ -110,46 +89,6 @@ const Work = () => {
                 <p className="text-gray-600">
                   {project.description}
                 </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Testimonials */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h3 className="text-3xl font-bold text-gray-900 mb-12">
-            Testimonios de <span className="text-blue-600">Clientes</span>
-          </h3>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={testimonial.name}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-xl p-8 shadow-lg border border-gray-200"
-            >
-              <div className="flex items-center mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                ))}
-              </div>
-              <Quote className="w-8 h-8 text-blue-500 mb-4" />
-              <p className="text-gray-600 mb-6 italic">
-                "{testimonial.text}"
-              </p>
-              <div>
-                <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                <p className="text-gray-500 text-sm">{testimonial.company}</p>
               </div>
             </motion.div>
           ))}

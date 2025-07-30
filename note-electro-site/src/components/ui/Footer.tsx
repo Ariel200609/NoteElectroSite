@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Zap, Plug } from 'lucide-react';
+import { Zap } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -14,7 +14,6 @@ const Footer = () => {
           >
             <div className="flex items-center space-x-1">
               <Zap className="w-6 h-6 text-yellow-400" />
-              <Plug className="w-5 h-5 text-black" />
             </div>
             <span className="text-xl font-bold text-white">
               Note<span className="text-yellow-400">Electro</span>
