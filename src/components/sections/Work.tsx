@@ -117,11 +117,36 @@ const Work = () => {
           <h3 className="text-2xl font-bold text-gray-900 mb-8">
             Empresas que confían en nosotros
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="h-16 bg-gray-200 rounded-lg flex items-center justify-center">
-                <span className="text-gray-500 font-semibold">Cliente {i}</span>
-              </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+            {[
+              './cliente (1).png',
+              './cliente (2).png',
+              './cliente (3).png',
+              './cliente (4).png',
+              './cliente (5).png',
+              './cliente (6).png',
+              './cliente (7).png',
+              './cliente (8).png',
+            ].map((image, index) => (
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05 }}
+                className="h-24 bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200"
+              >
+                <img 
+                  src={image} 
+                  alt={`Cliente ${index + 2}`}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    console.log('Error loading client image:', image);
+                    (e.target as HTMLImageElement).style.display = 'none';
+                  }}
+                />
+              </motion.div>
             ))}
           </div>
         </motion.div>

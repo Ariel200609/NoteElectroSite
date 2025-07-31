@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Factory, Wrench, Shield, Move, Snowflake } from 'lucide-react';
+import { Factory, Wrench, Shield, Move, Snowflake, AlertTriangle } from 'lucide-react';
 
 const services = [
   {
@@ -46,6 +46,15 @@ const services = [
     gradientFrom: 'from-cyan-500',
     gradientTo: 'to-cyan-600',
     bgGradient: 'from-cyan-500/20 to-cyan-600/20'
+  },
+  {
+    icon: AlertTriangle,
+    title: 'Urgencias',
+    description: 'Servicio de emergencia 24/7 para problemas eléctricos urgentes que requieren atención inmediata.',
+    bgColor: 'bg-red-500',
+    gradientFrom: 'from-red-500',
+    gradientTo: 'to-red-600',
+    bgGradient: 'from-red-500/20 to-red-600/20'
   }
 ];
 
@@ -74,7 +83,7 @@ const Services = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
