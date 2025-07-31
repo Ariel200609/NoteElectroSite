@@ -61,8 +61,12 @@ const Hero = () => {
                   <div className="relative">
                     {/* Enhanced Circle outline */}
                     <div className="w-44 h-44 border-4 border-black rounded-full flex items-center justify-center bg-gradient-to-br from-white to-gray-50 shadow-inner">
-                      {/* Enhanced Lightning bolt only */}
-                      <Zap className="w-28 h-28 text-yellow-400 drop-shadow-lg" />
+                      {/* Real Logo Image */}
+                      <img 
+                        src="./LogoNote.png" 
+                        alt="NoteElectro Logo" 
+                        className="w-32 h-32 object-contain rounded-full"
+                      />
                     </div>
                   </div>
                 </div>
