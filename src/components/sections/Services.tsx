@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Factory, Wrench, Shield, Move } from 'lucide-react';
+import { Factory, Wrench, Shield, Move, Snowflake } from 'lucide-react';
 
 const services = [
   {
@@ -37,6 +37,15 @@ const services = [
     gradientFrom: 'from-purple-500',
     gradientTo: 'to-purple-600',
     bgGradient: 'from-purple-500/20 to-purple-600/20'
+  },
+  {
+    icon: Snowflake,
+    title: 'Aires acondicionados',
+    description: 'Instalación, reparación y mantenimiento de sistemas de aire acondicionado residenciales e industriales.',
+    bgColor: 'bg-cyan-500',
+    gradientFrom: 'from-cyan-500',
+    gradientTo: 'to-cyan-600',
+    bgGradient: 'from-cyan-500/20 to-cyan-600/20'
   }
 ];
 
@@ -65,7 +74,7 @@ const Services = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -77,14 +86,14 @@ const Services = () => {
               className="group relative"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-white/80 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 group-hover:border-blue-200">
-                <div className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${service.gradientFrom} ${service.gradientTo} flex items-center justify-center mb-6 mx-auto shadow-lg group-hover:shadow-xl transition-shadow duration-300`}>
-                  <service.icon className="w-10 h-10 text-white" />
+              <div className="relative bg-white rounded-3xl p-6 lg:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 group-hover:border-blue-200">
+                <div className={`w-16 h-16 lg:w-20 lg:h-20 rounded-2xl bg-gradient-to-r ${service.gradientFrom} ${service.gradientTo} flex items-center justify-center mb-4 lg:mb-6 mx-auto shadow-lg group-hover:shadow-xl transition-shadow duration-300`}>
+                  <service.icon className="w-8 h-8 lg:w-10 lg:h-10 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4 text-center group-hover:text-blue-600 transition-colors duration-300">
+                <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-3 lg:mb-4 text-center group-hover:text-blue-600 transition-colors duration-300">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 text-center leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                <p className="text-sm lg:text-base text-gray-600 text-center leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                   {service.description}
                 </p>
                 

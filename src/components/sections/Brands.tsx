@@ -18,7 +18,7 @@ const brands = [
 
 const Brands = () => {
   return (
-    <section className="py-16 bg-gradient-to-r from-gray-50 to-blue-50 relative overflow-hidden">
+    <section id="brands" className="py-16 bg-gradient-to-r from-gray-50 to-blue-50 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-72 h-72 bg-yellow-500/5 rounded-full blur-3xl"></div>
