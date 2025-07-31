@@ -45,7 +45,7 @@ const FloatingNavbar = () => {
           className="fixed z-40 flex flex-col items-center justify-center w-full top-4"
         >
           <nav>
-            <div className="flex items-center justify-center gap-2 px-2 py-2 rounded-full bg-gray-900/90 backdrop-blur-md border border-gray-700 shadow-2xl">
+            <div className="flex items-center justify-center gap-2 px-2 py-2 rounded-full bg-gray-900/90 backdrop-blur-md border border-gray-700 shadow-2xl shadow-yellow-400/20">
               {itemsNavbar.map((item) => {
                 const IconComponent = item.icon;
                 return (

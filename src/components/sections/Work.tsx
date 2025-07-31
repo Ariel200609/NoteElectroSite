@@ -3,39 +3,39 @@ import { Star } from 'lucide-react';
 
 const projects = [
   {
-    title: 'Instalación Industrial',
-    description: 'Instalación eléctrica completa para fábrica metalúrgica',
-    image: '/api/placeholder/400/300',
+    title: 'Energía Solar',
+    description: 'Instalación de sistemas de energía solar',
+    image: './EnergiaSolar.png',
     category: 'Industrial'
   },
   {
-    title: 'Reparación Comercial',
-    description: 'Mantenimiento y reparación de sistema eléctrico comercial',
-    image: '/api/placeholder/400/300',
+    title: 'Refrigeración',
+    description: 'Mantenimiento y reparación de sistemas de refrigeración',
+    image: './refrigeracion.png',
     category: 'Comercial'
   },
   {
-    title: 'Instalación Residencial',
-    description: 'Instalación eléctrica completa para vivienda nueva',
-    image: '/api/placeholder/400/300',
+    title: 'Riegos Artificial',
+    description: 'Instalación de riegos artificiales',
+    image: './riegosArtificiales.png',
     category: 'Residencial'
   },
   {
-    title: 'Mantenimiento Preventivo',
+    title: 'Hasta el Minimo Detalle',
     description: 'Programa de mantenimiento para empresa logística',
-    image: '/api/placeholder/400/300',
+    image: './detalles.png',
     category: 'Mantenimiento'
   },
   {
     title: 'Movimiento de Suelos',
     description: 'Reubicación de instalaciones eléctricas existentes',
-    image: '/api/placeholder/400/300',
+    image: './moviminetosSuelo.png',
     category: 'Movimiento'
   },
   {
     title: 'Sistema de Emergencia',
     description: 'Instalación de sistema de emergencia para hospital',
-    image: '/api/placeholder/400/300',
+    image: './urgencia.jpg',
     category: 'Emergencia'
   }
 ];
@@ -72,15 +72,27 @@ const Work = () => {
               whileHover={{ y: -10 }}
               className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
             >
-              <div className="h-48 bg-gradient-to-br from-blue-500 to-orange-500 relative">
-                <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                  <div className="text-center text-white">
-                    <div className="w-16 h-16 bg-white/20 rounded-full mx-auto mb-2 flex items-center justify-center">
-                      <Star className="w-8 h-8" />
+              <div className="h-48 bg-gradient-to-br from-blue-500 to-orange-500 relative overflow-hidden">
+                {project.image.includes('moviminetosSuelo') || project.image.includes('urgencia') || project.image.includes('detalles') || project.image.includes('riegosArtificiales') || project.image.includes('refrigeracion') || project.image.includes('EnergiaSolar') ? (
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      console.log('Error loading image:', project.image);
+                      (e.target as HTMLImageElement).style.display = 'none';
+                    }}
+                  />
+                ) : (
+                  <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+                    <div className="text-center text-white">
+                      <div className="w-16 h-16 bg-white/20 rounded-full mx-auto mb-2 flex items-center justify-center">
+                        <Star className="w-8 h-8" />
+                      </div>
+                      <p className="text-sm opacity-90">{project.category}</p>
                     </div>
-                    <p className="text-sm opacity-90">{project.category}</p>
                   </div>
-                </div>
+                )}
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
