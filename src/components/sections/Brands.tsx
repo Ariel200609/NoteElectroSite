@@ -2,18 +2,10 @@ import { motion } from 'framer-motion';
 import { Zap, Shield, Award } from 'lucide-react';
 
 const brands = [
-  { name: 'Siemens', logo: '/api/placeholder/120/60', category: 'Industrial' },
-  { name: 'Schneider Electric', logo: '/api/placeholder/120/60', category: 'Automation' },
-  { name: 'ABB', logo: '/api/placeholder/120/60', category: 'Power' },
-  { name: 'Eaton', logo: '/api/placeholder/120/60', category: 'Electrical' },
-  { name: 'Legrand', logo: '/api/placeholder/120/60', category: 'Residential' },
-  { name: 'Hager', logo: '/api/placeholder/120/60', category: 'Commercial' },
-  { name: 'Schneider', logo: '/api/placeholder/120/60', category: 'Industrial' },
-  { name: 'Siemens', logo: '/api/placeholder/120/60', category: 'Automation' },
-  { name: 'ABB', logo: '/api/placeholder/120/60', category: 'Power' },
-  { name: 'Eaton', logo: '/api/placeholder/120/60', category: 'Electrical' },
-  { name: 'Legrand', logo: '/api/placeholder/120/60', category: 'Residential' },
-  { name: 'Hager', logo: '/api/placeholder/120/60', category: 'Commercial' },
+  { name: 'MILWAUKEE', logo: './MILWAUKEE.png', category: 'Herramientas' },
+  { name: 'SICA', logo: './SICA.png', category: 'Material eléctrico' },
+  { name: 'JELUZ', logo: './JELUZ.png', category: 'Interruptores y tomas' },
+  { name: 'CROSSMASTER', logo: './CROSSMASTER.png', category: 'Herramientas' },
 ];
 
 const Brands = () => {
@@ -66,7 +58,7 @@ const Brands = () => {
                 x: [0, -50 * brands.length]
               }}
               transition={{
-                duration: 30,
+                duration: 8,
                 repeat: Infinity,
                 ease: "linear"
               }}
@@ -80,14 +72,10 @@ const Brands = () => {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 min-w-[200px]">
-                    <div className="h-16 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center mb-3">
-                      <div className="text-center">
-                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mx-auto mb-2">
-                          <Zap className="w-6 h-6 text-white" />
-                        </div>
-                        <p className="text-sm font-semibold text-gray-700">{brand.name}</p>
-                      </div>
+                    <div className="h-16 bg-white rounded-lg flex items-center justify-center mb-3">
+                      <img src={brand.logo} alt={brand.name} className="h-10 w-auto object-contain" />
                     </div>
+                    <p className="text-sm font-semibold text-gray-700 text-center">{brand.name}</p>
                     <p className="text-xs text-gray-500 text-center">{brand.category}</p>
                   </div>
                 </motion.div>
@@ -102,14 +90,10 @@ const Brands = () => {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 min-w-[200px]">
-                    <div className="h-16 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center mb-3">
-                      <div className="text-center">
-                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mx-auto mb-2">
-                          <Zap className="w-6 h-6 text-white" />
-                        </div>
-                        <p className="text-sm font-semibold text-gray-700">{brand.name}</p>
-                      </div>
+                    <div className="h-16 bg-white rounded-lg flex items-center justify-center mb-3">
+                      <img src={brand.logo} alt={brand.name} className="h-10 w-auto object-contain" />
                     </div>
+                    <p className="text-sm font-semibold text-gray-700 text-center">{brand.name}</p>
                     <p className="text-xs text-gray-500 text-center">{brand.category}</p>
                   </div>
                 </motion.div>
