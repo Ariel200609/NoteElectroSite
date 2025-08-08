@@ -12,7 +12,7 @@ const About = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Image */}
+          {/* Logo Image */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -26,27 +26,87 @@ const About = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-orange-500/20"></div>
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,_#ffffff_1px,transparent_1px)] bg-[length:20px_20px] opacity-20"></div>
                 
-                {/* Content overlay */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center text-white">
-                    <motion.div 
-                      className="w-32 h-32 bg-white/20 rounded-full mx-auto mb-6 flex items-center justify-center backdrop-blur-sm border border-white/30"
-                      animate={{ 
-                        scale: [1, 1.05, 1],
-                        rotate: [0, 5, 0]
-                      }}
-                      transition={{ 
-                        duration: 4,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                      }}
-                    >
-                      <Zap className="w-16 h-16 text-white" />
-                    </motion.div>
-                    <p className="text-xl font-semibold mb-2">Francisco Fernández</p>
-                    <p className="text-sm opacity-90">Electricista Profesional</p>
-                  </div>
-                </div>
+                                 {/* Logo overlay */}
+                 <div className="absolute inset-0 flex items-center justify-center">
+                   <motion.div 
+                     className="w-48 h-48 bg-white/20 rounded-full mx-auto flex items-center justify-center backdrop-blur-sm border border-white/30"
+                     animate={{ 
+                       scale: [1, 1.05, 1],
+                       rotate: [0, 5, 0]
+                     }}
+                     transition={{ 
+                       duration: 4,
+                       repeat: Infinity,
+                       ease: "easeInOut"
+                     }}
+                   >
+                     <img 
+                       src="./LogoNote.png" 
+                       alt="Note Electro Logo" 
+                       className="w-32 h-32 object-contain rounded-full"
+                     />
+                   </motion.div>
+                   
+                   {/* Additional decorative elements */}
+                   <div className="absolute inset-0">
+                     {/* Rotating rings around logo */}
+                     <motion.div 
+                       className="absolute inset-0 border-2 border-white/20 rounded-full"
+                       animate={{ rotate: 360 }}
+                       transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                     />
+                     <motion.div 
+                       className="absolute inset-0 border border-white/10 rounded-full"
+                       style={{ margin: '20px' }}
+                       animate={{ rotate: -360 }}
+                       transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                     />
+                     
+                     {/* Floating particles */}
+                     <motion.div 
+                       className="absolute top-1/4 left-1/4 w-2 h-2 bg-yellow-400 rounded-full"
+                       animate={{ 
+                         y: [0, -20, 0],
+                         opacity: [0.5, 1, 0.5]
+                       }}
+                       transition={{ duration: 3, repeat: Infinity }}
+                     />
+                     <motion.div 
+                       className="absolute top-3/4 right-1/4 w-1.5 h-1.5 bg-blue-400 rounded-full"
+                       animate={{ 
+                         y: [0, 15, 0],
+                         opacity: [0.5, 1, 0.5]
+                       }}
+                       transition={{ duration: 2.5, repeat: Infinity, delay: 1 }}
+                     />
+                     <motion.div 
+                       className="absolute bottom-1/4 left-3/4 w-1 h-1 bg-orange-400 rounded-full"
+                       animate={{ 
+                         x: [0, 10, 0],
+                         opacity: [0.5, 1, 0.5]
+                       }}
+                       transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+                     />
+                   </div>
+                   
+                   {/* Text overlay */}
+                   <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center">
+                     <motion.p 
+                       className="text-white/80 text-sm font-medium"
+                       animate={{ opacity: [0.5, 1, 0.5] }}
+                       transition={{ duration: 2, repeat: Infinity }}
+                     >
+                       Francisco Fernández
+                     </motion.p>
+                     <motion.p 
+                       className="text-white/60 text-xs"
+                       animate={{ opacity: [0.3, 0.8, 0.3] }}
+                       transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+                     >
+                       Electricista Profesional
+                     </motion.p>
+                   </div>
+                 </div>
               </div>
               
               {/* Floating badge */}
@@ -65,13 +125,33 @@ const About = () => {
                 <Award className="w-12 h-12 text-white" />
               </motion.div>
 
-              {/* Stats badges */}
-              <div className="absolute -top-4 -left-4 bg-white rounded-2xl p-4 shadow-lg border border-gray-100">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-600">15+</div>
-                  <div className="text-xs text-gray-600">Años</div>
-                </div>
-              </div>
+                             {/* Stats badges */}
+               <div className="absolute -top-4 -left-4 bg-white rounded-2xl p-4 shadow-lg border border-gray-100">
+                 <div className="text-center">
+                   <div className="text-2xl font-bold text-blue-600">15+</div>
+                   <div className="text-xs text-gray-600">Años</div>
+                 </div>
+               </div>
+
+               {/* Additional floating elements */}
+               <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl p-4 shadow-lg border border-gray-100">
+                 <div className="text-center">
+                   <div className="text-2xl font-bold text-orange-600">500+</div>
+                   <div className="text-xs text-gray-600">Proyectos</div>
+                 </div>
+               </div>
+
+               {/* Service badges */}
+               <div className="absolute top-1/2 -right-8 transform -translate-y-1/2 bg-white rounded-2xl p-3 shadow-lg border border-gray-100">
+                 <div className="text-center">
+                   <div className="w-8 h-8 bg-green-500 rounded-full mx-auto mb-1 flex items-center justify-center">
+                     <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                     </svg>
+                   </div>
+                   <div className="text-xs text-gray-600">Garantía</div>
+                 </div>
+               </div>
             </div>
           </motion.div>
 
@@ -86,10 +166,27 @@ const About = () => {
               Sobre <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-orange-600">mí</span>
             </h2>
             
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              Francisco Fernández, más de 15 años de experiencia en electricidad industrial y domiciliaria. 
-              Trabajo seguro, rápido y responsable.
-            </p>
+                         <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+               Francisco Fernández, más de 15 años de experiencia en electricidad industrial y domiciliaria. 
+               Trabajo seguro, rápido y responsable. Especializado en instalaciones eléctricas, mantenimiento 
+               preventivo, reparaciones de emergencia y proyectos de iluminación LED.
+             </p>
+
+             {/* Additional info cards */}
+             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+               <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-xl border border-blue-200">
+                 <h4 className="font-bold text-blue-800 mb-2">Instalaciones</h4>
+                 <p className="text-blue-700 text-sm">Residenciales, comerciales e industriales</p>
+               </div>
+               <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-4 rounded-xl border border-orange-200">
+                 <h4 className="font-bold text-orange-800 mb-2">Mantenimiento</h4>
+                 <p className="text-orange-700 text-sm">Preventivo y correctivo</p>
+               </div>
+               <div className="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-xl border border-green-200">
+                 <h4 className="font-bold text-green-800 mb-2">Emergencias</h4>
+                 <p className="text-green-700 text-sm">Servicio 24/7 disponible</p>
+               </div>
+             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               <motion.div 
@@ -149,13 +246,59 @@ const About = () => {
               </motion.div>
             </div>
 
-            <motion.button
-              className="bg-gradient-to-r from-blue-600 to-orange-600 hover:from-blue-700 hover:to-orange-700 text-white font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Conocer más
-            </motion.button>
+                                      <div className="flex justify-center sm:justify-start">
+               <motion.button
+                 className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
+                 whileHover={{ scale: 1.05, y: -2 }}
+                 whileTap={{ scale: 0.95 }}
+                 onClick={() => {
+                   document.getElementById('work')?.scrollIntoView({ 
+                     behavior: 'smooth' 
+                   });
+                 }}
+               >
+                 Ver trabajos
+               </motion.button>
+             </div>
+
+             {/* Certifications and achievements */}
+             <div className="mt-12 p-6 bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl border border-gray-200">
+               <h3 className="text-2xl font-bold text-gray-900 mb-4">Certificaciones y Logros</h3>
+               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                 <div className="flex items-center space-x-3">
+                   <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                     <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                     </svg>
+                   </div>
+                   <span className="text-gray-700">Certificación en Seguridad Eléctrica</span>
+                 </div>
+                 <div className="flex items-center space-x-3">
+                   <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                     <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                     </svg>
+                   </div>
+                   <span className="text-gray-700">Más de 500 proyectos completados</span>
+                 </div>
+                 <div className="flex items-center space-x-3">
+                   <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                     <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                     </svg>
+                   </div>
+                   <span className="text-gray-700">Especialista en Energías Renovables</span>
+                 </div>
+                 <div className="flex items-center space-x-3">
+                   <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                     <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                     </svg>
+                   </div>
+                   <span className="text-gray-700">Garantía de 2 años en todos los trabajos</span>
+                 </div>
+               </div>
+             </div>
           </motion.div>
         </div>
       </div>

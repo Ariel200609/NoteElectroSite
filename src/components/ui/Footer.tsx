@@ -23,6 +23,14 @@ const Footer = () => {
           {/* Copyright */}
           <div className="text-gray-400 text-center md:text-right">
             <p>© NoteElectro 2025 – Todos los derechos reservados.</p>
+            <a 
+              href="https://instagram.com/developerariel_" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block mt-2 text-white/80 hover:text-white text-sm bg-white/5 hover:bg-white/10 px-3 py-1 rounded-full border border-white/10"
+            >
+              Creado por: <span className="font-semibold">&lt;byAriel&gt;</span>
+            </a>
           </div>
         </div>
       </div>

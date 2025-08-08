@@ -129,7 +129,7 @@ const Services = () => {
               Contáctanos para recibir una propuesta adaptada a tus necesidades específicas
             </p>
             <motion.a
-              href="https://wa.me/5492923659973?text=¡Hola!  Vi tu página web y me gustaría consultar sobre un presupuesto para servicios eléctricos. ¿Podrías ayudarme? "
+              href="https://wa.me/5492923447567?text=¡Hola!  Vi tu página web y me gustaría consultar sobre un presupuesto para servicios eléctricos. ¿Podrías ayudarme? "
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-white text-blue-600 font-semibold py-4 px-8 rounded-full text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"

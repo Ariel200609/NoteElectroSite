@@ -38,7 +38,7 @@ const Contact = () => {
               <Phone className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-xl font-semibold text-white mb-4 text-center">WhatsApp</h3>
-            <p className="text-gray-300 text-center">+54 9 11 1234-5678</p>
+            <p className="text-gray-300 text-center">+54 9 2923 447567</p>
             <p className="text-blue-300 text-sm text-center mt-2">Respuesta inmediata</p>
           </motion.div>
 
@@ -128,7 +128,7 @@ const Contact = () => {
           className="text-center mt-12"
         >
           <motion.a
-            href="https://wa.me/5491112345678"
+            href="https://wa.me/5492923447567"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center space-x-3 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
