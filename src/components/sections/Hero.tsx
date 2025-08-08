@@ -8,6 +8,9 @@ const Hero = () => {
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_#FFD700_1px,transparent_1px)] bg-[length:50px_50px] animate-pulse opacity-20"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 via-transparent to-black/20"></div>
+        {/* Electric glow vignette */}
+        <div className="absolute -inset-8 bg-[radial-gradient(circle_at_50%_40%,_rgba(250,204,21,0.12),transparent_60%)]" />
+        {/**/}
       </div>
 
       {/* Floating elements */}
@@ -36,6 +39,7 @@ const Hero = () => {
           }}
           className="absolute bottom-20 right-20 w-40 h-40 bg-black/20 rounded-full blur-xl"
         />
+        {/**/}
       </div>
 
       {/* Content */}
@@ -48,16 +52,23 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="flex flex-col items-center lg:items-start justify-center"
           >
-            {/* Enhanced 3D Logo animation */}
+            {/* Enhanced Logo animation (subtle and elegant) */}
             <motion.div
-              initial={{ scale: 0, rotateY: 0 }}
-              animate={{ scale: 1, rotateY: 360 }}
-              transition={{ duration: 1.2, delay: 0.2 }}
-              className="mb-8"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
+              whileHover={{
+                scale: 1.03,
+                rotate: [0, 1.8, -1.8, 1.2, -1.2, 0],
+                x: [0, -1.5, 1.5, -1, 1, 0],
+                transition: { duration: 0.45, ease: 'easeInOut' }
+              }}
+              whileTap={{ scale: 0.98 }}
+              className="mb-8 will-change-transform"
             >
               <div className="relative">
-                {/* Enhanced 3D Logo Container */}
-                <div className="bg-gradient-to-br from-white to-gray-100 rounded-full p-10 shadow-2xl transform rotate-3 hover:rotate-0 transition-all duration-500 hover:shadow-yellow-500/25">
+                {/* Enhanced Logo Container */}
+                <div className="bg-gradient-to-br from-white to-gray-100 rounded-full p-10 shadow-2xl hover:shadow-yellow-500/25 transition-shadow duration-500">
                   <div className="relative">
                     {/* Enhanced Circle outline */}
                     <div className="w-44 h-44 border-4 border-black rounded-full flex items-center justify-center bg-gradient-to-br from-white to-gray-50 shadow-inner">
@@ -66,6 +77,17 @@ const Hero = () => {
                         src="./LogoNote.png" 
                         alt="NoteElectro Logo" 
                         className="w-32 h-32 object-contain rounded-full"
+                      />
+                      {/* Electric pulse ring (elegant) */}
+                      <motion.div
+                        className="pointer-events-none absolute inset-0 rounded-full"
+                        initial={{ boxShadow: '0 0 0 0 rgba(250,204,21,0.0)' }}
+                        animate={{ boxShadow: [
+                          '0 0 0 0 rgba(250,204,21,0.0)',
+                          '0 0 36px 8px rgba(250,204,21,0.35)',
+                          '0 0 0 0 rgba(250,204,21,0.0)'
+                        ]}}
+                        transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
                       />
                     </div>
                   </div>
@@ -86,7 +108,13 @@ const Hero = () => {
             >
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4">
                 <span className="text-white">Note</span>
-                <span className="text-yellow-400">Electro</span>
+                <motion.span
+                  className="text-yellow-400"
+                  animate={{ opacity: [0.9, 1, 0.85, 1], filter: ['drop-shadow(0 0 0 rgba(250,204,21,0))','drop-shadow(0 0 8px rgba(250,204,21,0.6))','drop-shadow(0 0 0 rgba(250,204,21,0))','drop-shadow(0 0 10px rgba(250,204,21,0.8))'] }}
+                  transition={{ duration: 2.5, repeat: Infinity }}
+                >
+                  Electro
+                </motion.span>
               </h1>
             </motion.div>
           </motion.div>
@@ -180,7 +208,7 @@ const Hero = () => {
                 <div className="flex gap-4 justify-center lg:justify-start">
                   {/* Instagram */}
                   <motion.a
-                    href="https://instagram.com/notelectro"
+                    href="https://instagram.com/note.electro"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300"

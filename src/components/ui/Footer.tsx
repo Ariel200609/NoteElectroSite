@@ -24,7 +24,7 @@ const Footer = () => {
           <div className="text-gray-400 text-center md:text-right">
             <p>© NoteElectro 2025 – Todos los derechos reservados.</p>
             <a 
-              href="https://instagram.com/developerariel_" 
+              href="https://instagram.com/note.electro" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-block mt-2 text-white/80 hover:text-white text-sm bg-white/5 hover:bg-white/10 px-3 py-1 rounded-full border border-white/10"
