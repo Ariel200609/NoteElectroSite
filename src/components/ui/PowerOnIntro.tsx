@@ -5,15 +5,23 @@ const PowerOnIntro = () => {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(false), 2200);
-    return () => clearTimeout(timer);
+    // Lock scroll while intro is visible
+    document.body.style.overflow = 'hidden';
+    const timer = setTimeout(() => {
+      setIsVisible(false);
+      document.body.style.overflow = '';
+    }, 2200);
+    return () => {
+      clearTimeout(timer);
+      document.body.style.overflow = '';
+    };
   }, []);
 
   return (
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          className="fixed inset-0 z-[70] bg-black"
+          className="fixed inset-0 z-[9999] bg-black w-screen h-screen"
           initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
