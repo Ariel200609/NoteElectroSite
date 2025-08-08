@@ -6,10 +6,12 @@ import Work from './components/sections/Work';
 import Contact from './components/sections/Contact';
 import Footer from './components/ui/Footer';
 import FloatingNavbar from './components/ui/FloatingNavbar';
+import PowerOnIntro from './components/ui/PowerOnIntro';
 
 function App() {
   return (
     <div className="App">
+      <PowerOnIntro />
       <Hero />
       <Services />
       <Brands />
